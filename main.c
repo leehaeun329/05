@@ -1,23 +1,24 @@
 #include <stdio.h>
 
 int main(void) {
-    int answer = 59;
-    int input;
-    int trial = 0;
+    int a, b;
+    char op;
+    int res;
 
-    do
-    {
-        printf("Guess the number:");
-        scanf("%i", &input);
+    printf("enter the calculation: ");
+    scanf("%d %c %d", &a, &op, &b);
 
-        if (answer < input)
-            printf("high!\n");
-        else if (answer > input)
-            printf("low!\n");
+    if (op == '+') {
+        res = a + b;
+    } else if (op == '-') {
+        res = a - b;
+    } else if (op == '*') {
+        res = a * b;
+    } else if (op == '/') {
+       res = a / b;
+    }
 
-        trial++;
-    } while (answer != input);
+    printf("= %i\n", res);
 
-    printf("Congratulation! trial: %i\n", trial);
     return 0;
 }
